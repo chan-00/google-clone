@@ -6,6 +6,7 @@ const AllContainer = styled.div`
   position: relative;
 `;
 
+
 function App() {
   return (
     <AllContainer>
