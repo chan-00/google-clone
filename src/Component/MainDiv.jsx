@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import LogoSrc from "../Images/google-logo-image.PNG";
-import MicImageSrc from "../Images/google-mic-image.PNG";
+import MicIcon from "../Svg/MicIcon.jsx";
 import { Search } from "react-bootstrap-icons";
 
 const MainContainer = styled.div`
@@ -38,17 +38,6 @@ const SearchIcon = styled(Search)`
   color: gray;
   margin-top: 25px;
   margin-left: 30px;
-`;
-
-const MicIcon = styled.img.attrs({
-    src: `${MicImageSrc}`
-  })`
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  right: 20px;
-  top: 15px;
-  cursor: pointer;
 `;
 
 const ShortCutsDiv = styled.div`
