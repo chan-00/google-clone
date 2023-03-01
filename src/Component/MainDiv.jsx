@@ -51,6 +51,35 @@ const MicIcon = styled.img.attrs({
   cursor: pointer;
 `;
 
+const ShortCutsDiv = styled.div`
+  display: inline-block;
+  border-radius: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+
+  :hover {
+    background-color: rgb(220, 220, 220);
+  }
+`;
+
+const PlusButton = styled.p`
+  display: inline-block;
+  border-radius: 50%;
+  padding: 0 20px 10px;
+
+  background-color: rgb(240, 240, 240);
+
+  font-size: 40px;
+  font-weight: 800;
+
+  margin: 25px 0;
+  `;
+
+const PlusText = styled.p`
+  font-size: 20px;
+  margin: 5px 10px;
+`;
+
 function MainDiv() {
     return (
         <MainContainer>
@@ -62,6 +91,10 @@ function MainDiv() {
                     placeholder="Google 검색 또는 URL 입력"    
                 />
             </SearchForm>
+            <ShortCutsDiv title="바로가기 추가">
+                    <PlusButton>+</PlusButton>
+                    <PlusText>바로가기 추가</PlusText>
+            </ShortCutsDiv>
         </MainContainer>
     )
 }
