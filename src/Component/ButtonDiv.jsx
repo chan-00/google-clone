@@ -4,9 +4,8 @@ import userButtonSrc from "../Images/google-user-image.jpg";
 
 const ButtonContainer = styled.div`
   float:right;
-  margin-top: 10px;
   * {
-    margin-right: 25px;
+    margin-right: 10px;
     vertical-align: middle;
     cursor: pointer;
   }
@@ -15,9 +14,10 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const ButtonText = styled.span`
-  font-size: 20px;
+const ButtonText = styled.a`
+  font-size: 0.85rem;
   color: rgb(60, 60, 60);
+  text-decoration: none;
   :hover {
     text-decoration: underline;
   }
@@ -26,8 +26,8 @@ const ButtonText = styled.span`
 const ButtonIcon = styled.img.attrs({
   src: `${buttonSrc}`
 })`
-width: 35px;
-height: 35px;
+width: 25px;
+height: 25px;
 border-radius: 50%;
 opacity: 0.7;
 padding: 10px;
@@ -40,8 +40,8 @@ const ButtonPersonCircle = styled.img.attrs({
   src: `${userButtonSrc}`
 })`
   color: gray;
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
   :hover {
@@ -53,7 +53,7 @@ const ButtonPersonCircle = styled.img.attrs({
 function ButtonDiv() {
   return (
     <ButtonContainer>
-        <ButtonText>Gmail</ButtonText>
+        <ButtonText href="https://www.google.com/gmail/about/">Gmail</ButtonText>
         <ButtonText>이미지</ButtonText>
         <ButtonIcon/>
         <ButtonPersonCircle/>

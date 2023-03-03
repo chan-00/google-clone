@@ -6,26 +6,26 @@ import { Search } from "react-bootstrap-icons";
 const MainContainer = styled.div`
     position: absolute;
     left: 50%;
-    margin: 230px 0 0 -440px;
+    margin: 150px 0 0 -280px;
     text-align: center;
 `;
 
 const LogoIcon = styled.img.attrs({
     src: `${LogoSrc}`
   })`
-    width: 413px;
-    height: 140px;
+    width: 270px;
+    height: 90px;
 `;
 
 const SearchForm = styled.form`
-  margin-top: 50px;
+  margin-top: 40px;
   position: relative;
 `;
 
 const SearchInput = styled.input`
-  width: 710px;
-  font-size: 23px;
-  padding: 20px 70px;
+  width: 480px;
+  padding: 12px 50px;
+  font-size: 16px;
 
   border: 1px solid rgb(240, 240, 240);
   border-radius: 50px;
@@ -34,15 +34,14 @@ const SearchInput = styled.input`
 
 const SearchIcon = styled(Search)`
   position: absolute;
-  font-size: 20px;
-  color: gray;
-  margin-top: 25px;
-  margin-left: 30px;
+  font-size: 13px;
+  margin-top: 16px;
+  margin-left: 20px;
 `;
 
 const ShortCutsDiv = styled.div`
   display: inline-block;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 20px;
   cursor: pointer;
 
@@ -54,19 +53,19 @@ const ShortCutsDiv = styled.div`
 const PlusButton = styled.p`
   display: inline-block;
   border-radius: 50%;
-  padding: 0 20px 10px;
+  padding: 0 15px 10px;
 
   background-color: rgb(240, 240, 240);
 
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 800;
 
-  margin: 25px 0;
+  margin: 15px 0;
   `;
 
 const PlusText = styled.p`
-  font-size: 20px;
-  margin: 5px 10px;
+  font-size: 14px;
+  margin: 0 10px 10px;
 `;
 
 function MainDiv() {

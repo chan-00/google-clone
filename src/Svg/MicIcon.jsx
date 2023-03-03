@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const MicSvg = styled.svg`
-    width: 30px;
-    heigth: 30px;
+    width: 22px;
+    heigth: 22px;
     cursor: pointer;
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 12px;
 `;
 
 function MicIcon({title}) {
