@@ -23,7 +23,7 @@ const SearchForm = styled.form`
 `;
 
 const SearchInput = styled.input`
-  width: 480px;
+  width: 460px;
   padding: 12px 50px;
   font-size: 16px;
 
