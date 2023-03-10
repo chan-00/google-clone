@@ -4,12 +4,16 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 //import image src
 import userButtonSrc from "../Images/google-user-image.jpg";
+//recoil 사용
+import { useRecoilValue } from "recoil";
+import atomDisplayFunctionArea from "../Atoms/atomDisplayFunctionArea";
 
 //전체 영역을 감싸는 컨테이너 css
 const AllContainerDiv = styled.div`
     border: 1px solid rgb(240, 240, 240);
     border-radius: 10px;
     box-shadow: 0 -3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    background-color: white;
 
     position: absolute;
     top: 50px;
@@ -21,6 +25,10 @@ const AllContainerDiv = styled.div`
     overflow-y: auto;
 
     padding-left: 10px;
+
+    z-index: 1;
+
+    display: ${props => props.display};
 `;
 
 //각 아이콘 버튼들을 감싸는 div 영역에 대한 css
@@ -55,6 +63,8 @@ const ButtonDiv = styled.div`
 `;
 
 function FunctionArea() {
+    //해당 영역을 디스플레이할 recoil 값
+    const functionAreaDisplay = useRecoilValue(atomDisplayFunctionArea);
 
     //아이콘 이미지들의 src와 title 값을 저장할 useState 변수1
     const [ iconInfoList1, setIconInfoList1 ] = useState([]);
@@ -79,13 +89,10 @@ function FunctionArea() {
         setIconInfoList2(iconTempList2);
     }, []);
 
-    console.log(iconInfoList1);
-    console.log(iconInfoList2);
-
     return (
-        <AllContainerDiv>
+        <AllContainerDiv display={functionAreaDisplay}>
             <ButtonDiv>
-                <img src={userButtonSrc} />
+                <img src={userButtonSrc} style={{borderRadius:"50%"}} />
                 <p>Google 계정</p>
             </ButtonDiv>
             {iconInfoList1.map((iconInfo, index) => (
