@@ -62,6 +62,19 @@ const ButtonDiv = styled.div`
     }
 `;
 
+//function area의 맨 마지막 버튼 영역에 대한 css
+const WorkspaceButtonDiv = styled.div`
+    font-size: 14px;
+    text-align: center;
+    color: blue;
+
+    margin: 15px 5px;
+    padding: 10px 15px;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+`;
+
 function FunctionArea() {
     //해당 영역을 디스플레이할 recoil 값
     const functionAreaDisplay = useRecoilValue(atomDisplayFunctionArea);
@@ -89,8 +102,13 @@ function FunctionArea() {
         setIconInfoList2(iconTempList2);
     }, []);
 
+    //해당 영역을 클릭했을 때에도 부모의 onMouseDown 이벤트로 function 영역이 없어지기 때문에, 해당 이벤트를 막기 위한 함수
+    const handleStopMouseDownEventBubbling = (e) => {  
+        e.stopPropagation();
+    }
+
     return (
-        <AllContainerDiv display={functionAreaDisplay}>
+        <AllContainerDiv display={functionAreaDisplay} onMouseDown={handleStopMouseDownEventBubbling}>
             <ButtonDiv>
                 <img src={userButtonSrc} style={{borderRadius:"50%"}} />
                 <p>Google 계정</p>
@@ -113,6 +131,10 @@ function FunctionArea() {
                 <img src={require("../Images/google-function-image36.png")} />
                 <p>Cloud Drive<sup>TM</sup> to Mail</p>
             </ButtonDiv>
+
+            <WorkspaceButtonDiv>
+                Google Workspace Marketplace에서 더보기
+            </WorkspaceButtonDiv>
 
         </AllContainerDiv>
     )
