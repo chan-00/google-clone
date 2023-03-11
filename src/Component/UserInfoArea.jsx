@@ -8,7 +8,7 @@ import userButtonSrc from "../Images/google-user-image.jpg";
 import { useRecoilValue } from "recoil";
 import atomDisplayUserInfoArea from "../Atoms/atomDisplayUserInfoArea";
 //import react bootstrap icon
-import { CameraFill, PersonPlus } from "react-bootstrap-icons";
+import { CameraFill, PersonPlus, BoxArrowRight } from "react-bootstrap-icons";
 
 //전체 영역을 감싸는 컨테이너 css
 const AllContainerDiv = styled.div`
@@ -26,8 +26,6 @@ const AllContainerDiv = styled.div`
 
     overflow-y: auto;
 
-    padding-left: 10px;
-
     z-index: 1;
 
     display: ${props => props.display};
@@ -40,8 +38,10 @@ const UserInfoContainer = styled.div`
     background-color: white;
     border-radius: 30px;
 
+    margin-left: 10px;
+
     width: 95%;
-    height: 65%;
+    height: 200px;
 
     overflow: hidden;
 `;
@@ -112,7 +112,7 @@ const UserAccountButton = styled.button`
     border: 1px solid black;
     border-radius: 7px;
 
-    margin: 0 0 25px 90px;
+    margin: 10px 0 20px 90px;
     cursor: pointer;
     :hover {
         background-color: rgb(220, 220, 220);
@@ -143,7 +143,30 @@ const OtherAccountPlusContainer = styled.div`
 //계정 추가 아이콘 css
 const PlusPersonIcon = styled(PersonPlus)`
     font-size: 20px;
+`;
 
+//로그아웃 영역 컨테이너 css
+const LogoutContainer = styled.div`
+    cursor: pointer;
+    padding: 10px 45px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+
+    > p {
+        display: inline-block;
+        font-size: 13px;
+        margin: 0;
+        margin-left: 35px;
+        vertical-align: top;
+    }
+
+    :hover {
+        background-color: rgb(237, 235, 251);
+    }
+`;
+
+//로그아웃 아이콘 css
+const LogoutIcon = styled(BoxArrowRight)`
+    font-size: 20px;
 `;
 
 function UserInfoArea() {
@@ -173,6 +196,10 @@ function UserInfoArea() {
                     <p>다른 계정 추가</p>
                 </OtherAccountPlusContainer>
             </UserInfoContainer>
+            <LogoutContainer>
+                <LogoutIcon/>
+                <p>로그아웃</p>
+            </LogoutContainer>
             
         </AllContainerDiv>
     )
