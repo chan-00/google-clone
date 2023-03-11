@@ -21,7 +21,7 @@ const AllContainerDiv = styled.div`
     top: 50px;
     right: 0;
 
-    width: 370px;
+    width: 380px;
     height: 300px;
 
     overflow-y: auto;
@@ -169,6 +169,29 @@ const LogoutIcon = styled(BoxArrowRight)`
     font-size: 20px;
 `;
 
+//마지막 텍스트 부분 영역 컨테이너 css
+const AdditionTextContainer = styled.div`
+    text-align: center;
+
+    > div {
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 12px;
+        cursor: pointer;
+
+        margin: 13px 7px 0;
+        padding: 3px;
+
+        :hover {
+            background-color: rgb(237, 235, 251);
+        }
+    }
+    > span {
+        font-weight: bold;
+        font-size: 20px;
+    }
+`;
+
 function UserInfoArea() {
     //해당 영역을 디스플레이할 recoil 값
     const userInfoAreaDisplay = useRecoilValue(atomDisplayUserInfoArea);
@@ -200,7 +223,11 @@ function UserInfoArea() {
                 <LogoutIcon/>
                 <p>로그아웃</p>
             </LogoutContainer>
-            
+            <AdditionTextContainer>
+                <div>개인정보처리방침</div>
+                <span>.</span>
+                <div>서비스 약관</div>
+            </AdditionTextContainer>
         </AllContainerDiv>
     )
 }
