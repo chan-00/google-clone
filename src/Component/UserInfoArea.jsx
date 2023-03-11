@@ -54,6 +54,9 @@ const UserImage = styled.div`
     height: 70px;
 
     border-radius: 50%;
+    display: inline-block;
+
+    margin: 15px 0 0 15px;
 `;
 
 //유저 이미지의 카메라 아이콘을 감싸는 컨테이너 css
@@ -82,6 +85,38 @@ const UserCameraIcon = styled(CameraFill)`
     }
 `;
 
+//사진 옆의 유저 텍스트 정보가 담겨 있는 컨테이너 css
+const UserInfoTextContainer = styled.div`
+    display: inline-block;
+    vertical-align: top;
+
+    margin: 30px 0 0 10px;
+
+    > p {
+        font-size: 14px;
+        margin: 0;
+    }
+    > span {
+        font-size: 13px;
+        color: rgb(60, 60, 60);
+    }
+`;
+
+//Google 계정 관리 버튼에 대한 css
+const UserAccountButton = styled.button`
+    background-color: white;
+    padding: 5px 15px;
+
+    border: 1px solid black;
+    border-radius: 7px;
+
+    margin: 0 0 20px 90px;
+    cursor: pointer;
+    :hover {
+        background-color: rgb(220, 220, 220);
+    }
+`;
+
 
 function UserInfoArea() {
     //해당 영역을 디스플레이할 recoil 값
@@ -100,6 +135,11 @@ function UserInfoArea() {
                         <UserCameraIcon/>
                     </UserCameraIconContainer>
                 </UserImage>
+                <UserInfoTextContainer>
+                    <p>찬영 정</p>
+                    <span>a37975387@gmail.com</span>
+                </UserInfoTextContainer>
+                <UserAccountButton>Google 계정 관리</UserAccountButton>
             </UserInfoContainer>
             
         </AllContainerDiv>
