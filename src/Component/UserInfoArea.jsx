@@ -8,7 +8,7 @@ import userButtonSrc from "../Images/google-user-image.jpg";
 import { useRecoilValue } from "recoil";
 import atomDisplayUserInfoArea from "../Atoms/atomDisplayUserInfoArea";
 //import react bootstrap icon
-import { CameraFill } from "react-bootstrap-icons";
+import { CameraFill, PersonPlus } from "react-bootstrap-icons";
 
 //전체 영역을 감싸는 컨테이너 css
 const AllContainerDiv = styled.div`
@@ -42,6 +42,8 @@ const UserInfoContainer = styled.div`
 
     width: 95%;
     height: 65%;
+
+    overflow: hidden;
 `;
 
 //유저 이미지 영역을 감싸는 컨테이너 css
@@ -110,13 +112,39 @@ const UserAccountButton = styled.button`
     border: 1px solid black;
     border-radius: 7px;
 
-    margin: 0 0 20px 90px;
+    margin: 0 0 25px 90px;
     cursor: pointer;
     :hover {
         background-color: rgb(220, 220, 220);
     }
 `;
 
+//다른 계정 추가 영역 컨테이너 css
+const OtherAccountPlusContainer = styled.div`
+    border-top: 3px solid rgb(246, 248, 255);
+    width: 100%;
+    height: 100%;
+    padding: 15px 35px 0;
+    cursor: pointer;
+
+    > p {
+        display: inline-block;
+        font-size: 13px;
+        margin: 0;
+        margin-left: 35px;
+        vertical-align: top;
+    }
+
+    :hover {
+        background-color: rgb(237, 235, 251);
+    }
+`;
+
+//계정 추가 아이콘 css
+const PlusPersonIcon = styled(PersonPlus)`
+    font-size: 20px;
+
+`;
 
 function UserInfoArea() {
     //해당 영역을 디스플레이할 recoil 값
@@ -140,6 +168,10 @@ function UserInfoArea() {
                     <span>a37975387@gmail.com</span>
                 </UserInfoTextContainer>
                 <UserAccountButton>Google 계정 관리</UserAccountButton>
+                <OtherAccountPlusContainer>
+                    <PlusPersonIcon/>
+                    <p>다른 계정 추가</p>
+                </OtherAccountPlusContainer>
             </UserInfoContainer>
             
         </AllContainerDiv>
