@@ -42,6 +42,7 @@ const ButtonDiv = styled.div`
     display: inline-block;
 
     text-align: center;
+    cursor: pointer;
 
     :hover {
         background-color: rgb(210, 232, 255);

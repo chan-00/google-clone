@@ -74,6 +74,7 @@ function ButtonDiv() {
   const handleClickFunctionButton = () => {
     if(functionAreaDisplay === "none") {
       setFunctionAreaDisplay("block");
+      setUserInfoAreaDisplay("none");
     }
     else if(functionAreaDisplay === "block") {
       setFunctionAreaDisplay("none");
@@ -83,6 +84,7 @@ function ButtonDiv() {
   const handleClickUserInfoButton = () => {
     if(userInfoAreaDisplay === "none") {
       setUserInfoAreaDisplay("block");
+      setFunctionAreaDisplay("none");
     }
     else if(userInfoAreaDisplay === "block") {
       setUserInfoAreaDisplay("none");
