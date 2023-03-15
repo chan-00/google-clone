@@ -74,6 +74,11 @@ const WorkspaceButtonDiv = styled.div`
 
     border: 1px solid gray;
     border-radius: 10px;
+
+    cursor: pointer;
+    :hover {
+        background-color: rgb(245, 255, 255);
+    }
 `;
 
 function FunctionArea() {
