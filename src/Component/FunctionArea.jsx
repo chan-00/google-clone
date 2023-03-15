@@ -17,7 +17,7 @@ const AllContainerDiv = styled.div`
 
     position: absolute;
     top: 50px;
-    right: 0;
+    right: 10px;
 
     width: 300px;
     height: 440px;

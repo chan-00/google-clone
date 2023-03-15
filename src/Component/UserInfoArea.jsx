@@ -5,8 +5,9 @@ import styled from "styled-components";
 //import image src
 import userButtonSrc from "../Images/google-user-image.jpg";
 //recoil 사용
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import atomDisplayUserInfoArea from "../Atoms/atomDisplayUserInfoArea";
+import atomDisplayProfileArea from "../Atoms/atomDisplayProfileArea";
 //import react bootstrap icon
 import { CameraFill, PersonPlus, BoxArrowRight } from "react-bootstrap-icons";
 
@@ -18,8 +19,8 @@ const AllContainerDiv = styled.div`
     background-color: rgb(246, 248, 255);
 
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 60px;
+    right: 15px;
 
     width: 380px;
     height: 300px;
@@ -195,10 +196,19 @@ const AdditionTextContainer = styled.div`
 function UserInfoArea() {
     //해당 영역을 디스플레이할 recoil 값
     const userInfoAreaDisplay = useRecoilValue(atomDisplayUserInfoArea);
+    //카메라 아이콘 클릭 시 모달 창을 화면에 띄울 recoil 값
+    const [ profileArea, setProfileArea ] = useRecoilState(atomDisplayProfileArea);
 
     //해당 영역을 클릭했을 때에도 부모의 onMouseDown 이벤트로 function 영역이 없어지기 때문에, 해당 이벤트를 막기 위한 함수
     const handleStopMouseDownEventBubbling = (e) => {  
-        e.stopPropagation();
+        if(profileArea === "none") {
+            e.stopPropagation();
+        }
+    }
+
+    //카메라 아이콘 클릭 시 호출되는 이벤트 함수
+    const handleClickCameraIcon = () => {
+        setProfileArea("block");
     }
 
     return (
@@ -206,7 +216,7 @@ function UserInfoArea() {
             <UserInfoContainer>
                 <UserImage>
                     <UserCameraIconContainer>
-                        <UserCameraIcon/>
+                        <UserCameraIcon onClick={handleClickCameraIcon}/>
                     </UserCameraIconContainer>
                 </UserImage>
                 <UserInfoTextContainer>

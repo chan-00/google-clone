@@ -8,6 +8,8 @@ import atomDisplayUserInfoArea from "../Atoms/atomDisplayUserInfoArea";
 
 const ButtonContainer = styled.div`
   float:right;
+  margin-top: 8px;
+  margin-right: 5px;
   * {
     margin-right: 10px;
     vertical-align: middle;
