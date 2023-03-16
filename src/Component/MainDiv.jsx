@@ -1,7 +1,16 @@
+//import styled component
 import styled from "styled-components";
+//import image src
 import LogoSrc from "../Images/google-logo-image.PNG";
 import MicIcon from "../Svg/MicIcon.jsx";
+//import react bootstrap icon
 import { Search } from "react-bootstrap-icons";
+//import create portal
+import { createPortal } from "react-dom";
+//import react hooks
+import { useState } from "react";
+//import react component
+import ShortCutsPlus from "./ShortCutsPlus";
 
 const MainContainer = styled.div`
     position: absolute;
@@ -69,6 +78,14 @@ const PlusText = styled.p`
 `;
 
 function MainDiv() {
+    //바로가기 추가 버튼 클릭 시 해당 모달 창이 나오게 하도록 하는 useState 변수값
+    const [ displayShortCuts, setDisplayShortCuts ] = useState("none");
+
+    //바로가기 버튼 영역 클릭 시 모달 창이 나오도록 하는 이벤트 함수
+    const handleShortCutsDivClick = () => {
+      setDisplayShortCuts("block");
+    }
+
     return (
         <MainContainer>
             <LogoIcon/>
@@ -79,10 +96,11 @@ function MainDiv() {
                     placeholder="Google 검색 또는 URL 입력"    
                 />
             </SearchForm>
-            <ShortCutsDiv title="바로가기 추가">
+            <ShortCutsDiv title="바로가기 추가" onClick={handleShortCutsDivClick}>
                     <PlusButton>+</PlusButton>
                     <PlusText>바로가기 추가</PlusText>
             </ShortCutsDiv>
+            {createPortal(<ShortCutsPlus display={displayShortCuts}/>, document.getElementById("root"))}
         </MainContainer>
     )
 }
