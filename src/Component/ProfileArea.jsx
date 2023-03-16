@@ -1,7 +1,7 @@
 //import react styled component
 import styled from "styled-components";
 //import recoil
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import atomDisplayProfileArea from "../Atoms/atomDisplayProfileArea";
 //import image src
 import GoogleAccoundLogoSrc from "../Images/google-profile-image01.png";
@@ -174,15 +174,30 @@ const ModifyButtonContainer = styled.div`
 
 function ProfileArea() {
     //해당 영역의 display 값을 담고 있는 recoil 변수
-    const profileArea = useRecoilValue(atomDisplayProfileArea);
+    const [ profileArea, setProfileArea ] = useRecoilState(atomDisplayProfileArea);
+
+    //부모의 onMouseDown 이벤트 함수로 해당 창을 클릭했을 때 해당 창이 사라지지 않게 이벤트 버블링을 막는 함수
+    const handleProfileOnMouseDown = (e) => {
+        e.stopPropagation();
+    }
+
+    //부모의 onClick 이벤트로 버블링되지 않도록 막는 이벤트 함수
+    const handleProfileOnClick = (e) => {
+        e.stopPropagation();
+    }
+
+    //X버튼 클릭 시 해당 영역이 사라지도록 하는 이벤트 함수
+    const handleClickNoneDisplay = () => {
+        setProfileArea("none");
+    }
 
 
     return (
-        <ProfileAllContainer display={profileArea}>
+        <ProfileAllContainer display={profileArea} onMouseDown={handleProfileOnMouseDown} onClick={handleClickNoneDisplay}>
 
-            <ProfileContainer>
+            <ProfileContainer onClick={handleProfileOnClick}>
                 <ProfileHeaderContainer>
-                    <XButton />
+                    <XButton onClick={handleClickNoneDisplay} />
                     <img src={GoogleAccoundLogoSrc} />
                     <ThreeDotsVerticalButton />
                 </ProfileHeaderContainer>
