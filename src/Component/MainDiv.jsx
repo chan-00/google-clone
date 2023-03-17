@@ -39,6 +39,14 @@ const SearchInput = styled.input`
   border: 1px solid rgb(240, 240, 240);
   border-radius: 50px;
   box-shadow: 0 -3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+
+  :focus {
+    outline: none;
+  }
+
+  :focus::placeholder {
+    color: transparent;
+  }
 `;
 
 const SearchIcon = styled(Search)`
@@ -100,7 +108,7 @@ function MainDiv() {
                     <PlusButton>+</PlusButton>
                     <PlusText>바로가기 추가</PlusText>
             </ShortCutsDiv>
-            {createPortal(<ShortCutsPlus display={displayShortCuts}/>, document.getElementById("root"))}
+            {createPortal(<ShortCutsPlus display={displayShortCuts} setDisplay={setDisplayShortCuts}/>, document.getElementById("root"))}
         </MainContainer>
     )
 }
