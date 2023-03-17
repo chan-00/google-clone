@@ -234,9 +234,9 @@ function UserInfoArea() {
                 <p>로그아웃</p>
             </LogoutContainer>
             <AdditionTextContainer>
-                <div>개인정보처리방침</div>
+                <div onClick={() => window.location.href="https://policies.google.com/privacy?hl=ko"}>개인정보처리방침</div>
                 <span>.</span>
-                <div>서비스 약관</div>
+                <div onClick={() => window.location.href="https://policies.google.com/terms?hl=ko"}>서비스 약관</div>
             </AdditionTextContainer>
         </AllContainerDiv>
     )

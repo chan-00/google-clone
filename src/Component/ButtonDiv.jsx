@@ -96,7 +96,7 @@ function ButtonDiv() {
   return (
     <ButtonContainer>
         <ButtonText href="https://www.google.com/gmail/about/">Gmail</ButtonText>
-        <ButtonText>이미지</ButtonText>
+        <ButtonText href="https://www.google.co.kr/imghp?hl=ko&tab=ri&ogbl">이미지</ButtonText>
         <ButtonIcon onMouseDown={handleMouseDownFunctionButton} onClick={handleClickFunctionButton}/>
         <ButtonPersonCircle onMouseDown={handleMouseDownUserInfoButton} onClick={handleClickUserInfoButton}/>
     </ButtonContainer>
