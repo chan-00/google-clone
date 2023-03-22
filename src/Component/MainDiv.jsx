@@ -70,12 +70,12 @@ const ShortCutsDiv = styled.div`
 const PlusButton = styled.p`
   display: inline-block;
   border-radius: 50%;
-  padding: 0 15px 10px;
+  padding: 0 14px 8px;
 
   background-color: rgb(240, 240, 240);
 
   font-size: 30px;
-  font-weight: 800;
+  font-weight: normal;
 
   margin: 15px 0;
   `;
