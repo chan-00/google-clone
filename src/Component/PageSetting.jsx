@@ -22,7 +22,7 @@ const PageSettingAllContainer = styled.div`
 //Chrome 맞춤 설정 클릭 시 나타나는 모달 창 컨테이너 css
 const PageSettingContainer = styled.div`
     width: 790px;
-    height: 510px;
+    height: 520px;
 
     background-color: white;
 
@@ -32,6 +32,10 @@ const PageSettingContainer = styled.div`
     transform: translate(-50%, -50%);
 
     border-radius: 10px;
+
+    @media screen and (max-height: 520px) {
+        height: 100%;
+    }
 `;
 
 //메인 컨텐츠 전체를 감싸는 컨테이너 css
