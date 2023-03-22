@@ -78,7 +78,7 @@ const PlusButton = styled.p`
   font-weight: normal;
 
   margin: 15px 0;
-  `;
+`;
 
 const PlusText = styled.p`
   font-size: 14px;
