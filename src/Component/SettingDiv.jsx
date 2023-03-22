@@ -13,7 +13,7 @@ import { useMediaQuery } from "react-responsive";
 
 const SettingContainer = styled.div`
     position: absolute;
-    bottom: 0px;
+    bottom: 15px;
     right: 15px;
 
     border: 1px solid rgb(240, 240, 240);   

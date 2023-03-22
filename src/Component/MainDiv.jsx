@@ -47,6 +47,10 @@ const SearchInput = styled.input`
   :focus::placeholder {
     color: transparent;
   }
+
+  @media screen and (min-width: 672px) {
+    height: 100%;
+  }
 `;
 
 const SearchIcon = styled(Search)`

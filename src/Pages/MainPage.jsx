@@ -18,7 +18,7 @@ import atomDisplayUserInfoArea from "../Atoms/atomDisplayUserInfoArea";
 import atomDisplayProfileArea from "../Atoms/atomDisplayProfileArea";
 
 const AllContainer = styled.div`
-  height: 96vh;
+  height: 100vh;
   position: relative;
 `;
 

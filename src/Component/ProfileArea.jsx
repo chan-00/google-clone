@@ -35,6 +35,11 @@ const ProfileContainer = styled.div`
     transform: translate(-50%, -50%);
 
     border-radius: 10px;
+
+    @media screen and ((max-height: 510px) or (max-width: 640px)) {
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 //모달 창의 Header 영역 컨테이너 css
