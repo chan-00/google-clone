@@ -30,6 +30,10 @@ const AllContainerDiv = styled.div`
     z-index: 1;
 
     display: ${props => props.display};
+
+    @media screen and (max-height: 395px) {
+        height: 80%;
+    }
 `;
 
 //유저 정보 영역을 감싸는 컨테이너 css
